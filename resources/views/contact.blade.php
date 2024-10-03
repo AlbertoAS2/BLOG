@@ -7,7 +7,7 @@
     <title>Inicio</title>
 </head>
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-<h1>Contacto</h1>
+<h1>Contacto de la empresa</h1>
 </body>
 </html>
 
