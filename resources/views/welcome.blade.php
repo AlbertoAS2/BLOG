@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta hhtp-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Inicio</title>
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        @include("partials.navigation")
+    <x-layout meta-title="Inicio" meta-description="Descripcion de la pagina de inicio">
         <h1>Inicio</h1>
-    </body>
-</html>
+        <x-slot:sidebar>
+            <p>Home Sidebar</p>
+        </x-slot:sidebar>
+    </x-layout>
+
+{{-- Esto hace muy similar a la primera parte del html
+    @component("components.layout")
+        <h1>Inicio</h1>
+    @endcomponent
+--}}
+
