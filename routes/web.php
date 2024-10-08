@@ -1,18 +1,12 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::view(uri: '/', view:'welcome')->name('home');
 Route::view(uri: 'contacto', view:'contact')->name('contact');
-Route::get(uri:'blog', action: function () {
-    $posts = [
-        ['title' => 'Post 1'],
-        ['title' => 'Post 2'],
-        ['title' => 'Post 3'],
-        ['title' => 'Post 4'],
-    ];
-})->name('blog');
+Route::get(uri:'blog', action: PostController::class)->name('blog');
 Route::view(uri:'nosotros', view: 'about')->name('about');
 
 
