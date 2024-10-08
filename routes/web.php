@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view(uri: '/', view:'welcome')->name('home');
 Route::view(uri: 'contacto', view:'contact')->name('contact');
-Route::get(uri:'blog', action: PostController::class)->name('blog');
+Route::get(uri:'blog', action: [PostController::class,'index'])->name('blog');
 Route::view(uri:'nosotros', view: 'about')->name('about');
 
 

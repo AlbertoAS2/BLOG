@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class PostController
+class PostController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         $post = [
             ['title' => 'Post 1'],
@@ -13,6 +13,6 @@ class PostController
             ['title' => 'Post 4'],
         ];
 
-        return view('blog', ['posts' => $post]);
+        return view('blog', compact(var_name: 'post'));
     }
 }
