@@ -3,18 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta hhtp-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $metaTitle ?? 'Default title' }}</title>
-    <meta name="description" content="{{ $metaDescription ?? 'DefaultDescription' }}">
+    <meta name="description" content="{{ $metaDescription ?? 'Default description' }}">
+    @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
+<body class="flex h-screen flex-col bg-slate-100 selection:bg-sky-600    selection:text-sky-50 dark:bg-slate-950">
 <x-partials.navigation />
+
+@session('status')
+<div>
+    {{ $value }}
+</div>
+@endsession
+
 {{ $slot }}
-{{--Condicional para no forzar a que herede esos elementos de un componente layout--}}
+
 @isset($sidebar)
     <div id="sidebar">
         <h3>Sidebar</h3>
-        {{$sidebar}}
+            {{ $sidebar }}
     </div>
 @endisset
 </body>
